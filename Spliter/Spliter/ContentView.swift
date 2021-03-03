@@ -57,7 +57,12 @@ struct ContentView: View {
                 }
                 
                 Section(header: Text("Total Amount")) {
-                    Text("\(checkAmount, specifier: "%.2f") €")
+                    if tipPercentage[percentSelected] == tipPercentage[4] {
+                        Text("\(checkAmount, specifier: "%.2f") €")
+                            .foregroundColor(.red)
+                    } else {
+                        Text("\(checkAmount, specifier: "%.2f") €")
+                    }
                 }
                 
                 Section(header: Text("Amount per person")) {
